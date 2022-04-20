@@ -16,6 +16,7 @@ import { QueryComponent } from './query/query.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { EmiComponent } from './emi/emi.component';
 import { EmiHishtoryComponent } from './emi-hishtory/emi-hishtory.component';
+import { OrderHishtoryComponent } from './order-hishtory/order-hishtory.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { EmiHishtoryComponent } from './emi-hishtory/emi-hishtory.component';
     QueryComponent,
     CustomerListComponent,
     EmiComponent,
-    EmiHishtoryComponent
+    EmiHishtoryComponent,
+    OrderHishtoryComponent
   ],
   imports: [
     BrowserModule,
