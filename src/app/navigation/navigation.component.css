@@ -1,0 +1,16 @@
+.navbar{
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #e7e2e081 0%, #e7bf8b 46.93%, #faf2ef81 100%);
+    width: 100%;
+    height: 100%;
+
+  }
+  nav.navbar.navbar-expand-lg.navbar-light.bg-light {
+    padding: 0;
+    
+  }
+  /* .navbar-brand{
+      margin-right: 550px;
+  }
+   */
