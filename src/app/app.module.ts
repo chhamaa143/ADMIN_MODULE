@@ -17,6 +17,7 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
 import { EmiComponent } from './emi/emi.component';
 import { EmiHishtoryComponent } from './emi-hishtory/emi-hishtory.component';
 import { OrderHishtoryComponent } from './order-hishtory/order-hishtory.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { OrderHishtoryComponent } from './order-hishtory/order-hishtory.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

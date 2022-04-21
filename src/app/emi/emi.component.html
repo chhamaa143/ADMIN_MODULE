@@ -6,18 +6,21 @@
             <th>Month</th>
             <th>Interest</th>
             <th>Total Downpayment</th>
-            <td><button  class="btn btn-warning">EMI</button></td>
+            <th>Total Remaining</th>
+            <th>Pay EMI</th>
         </tr>
     </thead>
-    <!-- <tbody>
+    <tbody>
 
-        <tr>
-            <td></td>
-            <td></td>
-            <td><img src="" width="100px" height="100px"></td>
-            <td><button  class="btn btn-warning">Edit</button></td>
-            <td><button  class="btn btn-danger">Delete</button></td>
+        <tr *ngFor="let emi of emis">
+            <td>{{emi.userId.uname}}</td>
+            <td>{{emi.emiInstallment}}</td>
+            <td>{{emi.emiMonth}}</td>
+            <td>{{emi.emiIntrest}}</td>
+            <td>{{emi.emiDownPayment}}</td>
+            <td>{{emi.emiRemaining}}</td>
+            <td><button  class="btn btn-warning" (click)="payEmi(emi.userId._id)">EMI</button></td>
         </tr>
     </tbody>
-</table> -->
+</table>
 
