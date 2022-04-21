@@ -16,6 +16,7 @@
     <tbody>
 
         <tr *ngFor="let product of products">
+
             <td>{{product.pName}}</td>
             <td><img [src]="product.pImage" width="100px" height="100px"></td>
             <td>{{product.pDescription}}</td>
@@ -23,6 +24,7 @@
             <td>{{product.pQuantity}}</td>
             <td>{{product.pDiscount}}</td>
             <td>{{product.pPrice}}</td>
+
             
             <td><button  class="btn btn-warning">Edit</button></td>
             <td><button  class="btn btn-danger" (click)="delete(product._id)">Delete</button></td>

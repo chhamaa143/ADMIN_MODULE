@@ -29,4 +29,5 @@ export class CategoryComponent implements OnInit {
       window.alert("ctaegory added..");
     });
   }
+
 }

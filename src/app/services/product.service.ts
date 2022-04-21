@@ -16,5 +16,6 @@ export class ProductService {
 
   deleteProduct(id:any){
     return this.http.get('https://furniture-v1-app.herokuapp.com/api/product/delete/'+id);
+
   }
 }

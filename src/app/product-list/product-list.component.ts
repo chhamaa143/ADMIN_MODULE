@@ -21,6 +21,7 @@ export class ProductListComponent implements OnInit {
     this.productService.deleteProduct(id).subscribe(data=>{
       window.alert("Deleted Successfully...");
       this.ngOnInit();
+
     });
   }
 
