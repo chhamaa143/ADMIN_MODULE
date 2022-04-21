@@ -5,18 +5,25 @@
             <th>S.no</th>
             <th>Product Name</th>
             <th>Product Image</th>
+            <th>Product Quantity</th>
+            <th>Product Offer</th>
+            <th>Product Description</th>
             <th>Edit</th>
             <th>Delete</th>
         </tr>
     </thead>
     <tbody>
 
-        <tr>
-            <td></td>
-            <td></td>
-            <td><img src="" width="100px" height="100px"></td>
+        <tr *ngFor="let product of products">
+            <td>{{getSerialNo()}}</td>
+            <td>{{product.pName}}</td>
+            <td><img [src]="product.pImage" width="100px" height="100px"></td>
+            <td>{{product.pQuantity}}</td>
+            <td>{{product.pOffers}}</td>
+            <td>{{product.pDescription}}</td>
+            
             <td><button  class="btn btn-warning">Edit</button></td>
-            <td><button  class="btn btn-danger">Delete</button></td>
+            <td><button  class="btn btn-danger" (click)="delete(product._id)">Delete</button></td>
         </tr>
     </tbody>
 </table>
