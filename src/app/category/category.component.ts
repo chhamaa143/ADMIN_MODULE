@@ -13,20 +13,20 @@ export class CategoryComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  name!: string;
-  image!:string;
 
+  image!:string;
   selectImage(event:any){
-      const file = event.target.files[0];
-      this.image=file;
+    const file = event.target.files[0];
+    this.image = file;
   }
 
-  submit(name: string){
+  submit(catName:string){
     const formData = new FormData();
+    console.log(catName+"  "+this.image);;
+    formData.append("name",catName);
     formData.append("image",this.image);
-    formData.append("name",name);
     this.categoryService.addCategory(formData).subscribe(data => {
-      window.alert("Added Successfully : "+data);
+      window.alert("ctaegory added..");
     });
   }
 

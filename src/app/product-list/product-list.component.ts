@@ -10,21 +10,18 @@ export class ProductListComponent implements OnInit {
 
   constructor(private productService: ProductService) { }
 
-  i:number =0;
-  products:any=[];
+  products:any=[]
   ngOnInit(): void {
-    this.productService.getAllProducts().subscribe(data => {
-      this.products = data;
+    this.productService.viewProducts().subscribe(data => {
+      this.products=data;
     });
   }
 
-  getSerialNo(){
-    return ++this.i;
-  }
+  delete(id:any){
+    this.productService.deleteProduct(id).subscribe(data=>{
+      window.alert("Deleted Successfully...");
+      this.ngOnInit();
 
-  delete(id:any) {
-    this.productService.deleteProduct(id).subscribe(data => {
-      window.alert("deleted : ");
     });
   }
 

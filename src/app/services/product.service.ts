@@ -6,18 +6,16 @@ import { Injectable } from '@angular/core';
 })
 export class ProductService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) {
 
-  getAllProducts(){
+  }
+
+  viewProducts(){
     return this.http.get('https://furniture-v1-app.herokuapp.com/api/product/view');
   }
 
-  deleteProduct(id:any) {
-     return this.http.get('https://furniture-v1-app.herokuapp.com/api/product/delete/'+id);
-  }
+  deleteProduct(id:any){
+    return this.http.get('https://furniture-v1-app.herokuapp.com/api/product/delete/'+id);
 
-  addProduct(formData:FormData) {
-    return this.http.post("https://furniture-v1-app.herokuapp.com/api/product/add",formData);
-    
   }
 }

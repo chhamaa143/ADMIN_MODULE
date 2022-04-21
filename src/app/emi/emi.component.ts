@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmiService } from '../services/emi.service';
 
 @Component({
   selector: 'app-emi',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmiComponent implements OnInit {
 
-  constructor() { }
+  constructor(private emiService: EmiService) { }
 
+  emis:any=[];
   ngOnInit(): void {
+    this.emiService.viewEmis().subscribe(data=>{
+      this.emis=data;
+    });
+  }
+
+  payEmi(id:any){
+    this.emiService.payEmi(id).subscribe(data=>{
+      window.alert("emi payed..");
+      this.ngOnInit();
+    });
   }
 
 }

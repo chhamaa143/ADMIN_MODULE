@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-customer-list',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
+  users:any=[];
   ngOnInit(): void {
+    this.userService.viewUsers().subscribe(data=>{
+      this.users=data;
+    });
+  }
+
+  delete(id:any){
+    this.userService.deleteUser(id).subscribe(data=>{
+      window.alert("deleted successfully");
+      this.ngOnInit();
+    })
   }
 
 }
