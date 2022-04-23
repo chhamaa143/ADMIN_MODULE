@@ -19,6 +19,7 @@ import { EmiHishtoryComponent } from './emi-hishtory/emi-hishtory.component';
 import { OrderHishtoryComponent } from './order-hishtory/order-hishtory.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

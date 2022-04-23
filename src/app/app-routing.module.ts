@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthadminGuard } from './authadmin.guard';
 import { CategoryListComponent } from './category-list/category-list.component';
 import { CategoryComponent } from './category/category.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
@@ -16,15 +17,16 @@ import { SigninComponent } from './signin/signin.component';
 const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:'signin',component:SigninComponent},
-  {path:'add-category',component:CategoryComponent},
-  {path:'category-list',component:CategoryListComponent},
-  {path:'add-product',component:ProductComponent},
-  {path:'product-list',component:ProductListComponent},
-  {path:'order-list',component:OrderComponent},
-  {path:'Query',component:QueryComponent},
-  {path:'Customer-list',component:CustomerListComponent},
-  {path:'Emi',component:EmiComponent},
-  {path:'emi-hishtory',component:EmiHishtoryComponent},
+  {path:'add-category',component:CategoryComponent,canActivate:[AuthadminGuard]},
+  {path:'category-list',component:CategoryListComponent,canActivate:[AuthadminGuard]},
+  {path:'add-product',component:ProductComponent,canActivate:[AuthadminGuard]},
+  {path:'product-list',component:ProductListComponent,canActivate:[AuthadminGuard]},
+  {path:'order-list',component:OrderComponent,canActivate:[AuthadminGuard]},
+  {path:'Query',component:QueryComponent,canActivate:[AuthadminGuard]},
+  {path:'Customer-list',component:CustomerListComponent,canActivate:[AuthadminGuard]},
+  {path:'Emi',component:EmiComponent,canActivate:[AuthadminGuard]},
+  {path:'emi-hishtory',component:EmiHishtoryComponent,canActivate:[AuthadminGuard]},
+  {path:'logout',component:HomeComponent},
   {path:'**',component:PageNotFoundComponent},
  
   
