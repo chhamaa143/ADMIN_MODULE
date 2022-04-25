@@ -3,11 +3,11 @@
         <div class="col-md-8">
                 <div class="form-group mb-3">
                     <label>Product Name</label>
-                    <input #pName type="text" class="form-control">
+                    <input [(ngModel)]="productName" type="text" class="form-control">
                 </div>
                 <div class="form-group mb-2">
                     <label>Product Price</label>
-                    <input  #pPrice type=""class="form-control">
+                    <input  [(ngModel)]="productPrice" type="number" class="form-control">
                 </div>
                 <div class="form-group mb-2">
                     <label>Product Image</label>
@@ -16,31 +16,33 @@
 
                 <div class="form-group mb-2">
                     <label>Product Quantity</label>
-                    <input  #pQuantity type="number" class="form-control">
+                    <input  [(ngModel)]="productQuantity" type="number" class="form-control">
                 </div>
 
                 <div class="form-group mb-2">
                     <label>Product Offer</label>
-                    <input  #pOffers type="text" class="form-control">
+                    <input  [(ngModel)]="productOffer" type="text" class="form-control">
                 </div>
 
                 <div class="form-group mb-2">
                     <label>Product Description</label>
-                    <input  #pDescription type="text" class="form-control">
+                    <input  [(ngModel)]="productDescription" type="text" class="form-control">
                 </div>
 
                 <div class="form-group mb-2">
                     <label>Product Discount</label>
-                    <input  #pDiscount type="text" class="form-control">
+                    <input  [(ngModel)]="productDiscount" type="text" class="form-control">
                 </div>
 
                 <div class="form-group mb-2">
-                    <label>category id</label>
-                    <input  #catId type="text" class="form-control">
+                    <label for="cars">Choose a Category :</label>
+                    <select [(ngModel)]="catId" id="cars" >
+                        <option *ngFor="let c of categories" [value]="c._id">{{c.catName}}</option>
+                    </select>
                 </div>
                
                 <div class="form-group">
-                    <button class="btn btn-success ">Add</button>
+                    <button class="btn btn-success " (click)="addProduct()">Add</button>
                 </div>
         </div>
     </div>

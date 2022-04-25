@@ -1,22 +1,26 @@
-<table class="table">
-    <thead>
-        <tr>
-            <th>User Name</th>
-            <th>User Mobile</th>
-            <th>User Email</th>
-            <th>Product Name</th>
-            <th>Product Image</th>
-            
-        </tr>
-    </thead>
-    <tbody>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>User Mobile</th>
+                <th>User Email</th>
+                <th>Product Name</th>
+                <th>Product Date</th>
+                <th>Order Image</th>
+                <th>Deliver</th>
+            </tr>
+        </thead>
+        <tbody>
 
-        <tr>
-            <td></td>
-            <td></td>
-            <td><img src="" width="100px" height="100px"></td>
-            
-        </tr>
-    </tbody>
-</table>
+            <tr *ngFor="let order of orders">
+                <td>{{order.userId.uname}}</td>
+                <td>{{order.userId.uemail}}</td>
+                <td>{{order.mobileNo}}</td>
+                <td>{{order.productId.pName}}</td>
+                <td>{{order.orderDate}}</td>
+                <td><img [src]="order.productId.pImage" width="100px" height="100px"></td>
+                <button class="btn btn-warning" (click)="deliver(order._id)">Deliver</button>
+            </tr>
+        </tbody>
+    </table>
 

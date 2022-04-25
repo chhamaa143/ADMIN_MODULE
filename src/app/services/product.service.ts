@@ -7,7 +7,6 @@ import { Injectable } from '@angular/core';
 export class ProductService {
 
   constructor(private http:HttpClient) {
-
   }
 
   viewProducts(){
@@ -17,5 +16,10 @@ export class ProductService {
   deleteProduct(id:any){
     return this.http.get('https://furniture-v1-app.herokuapp.com/api/product/delete/'+id);
 
+  }
+
+  addProduct(formData:FormData){
+    //return this.http.post('https://furniture-v1-app.herokuapp.com/api/product/add',formData);
+    return this.http.post('http://localhost:3000/api/product/add',formData);
   }
 }
