@@ -15,4 +15,8 @@ export class EmiService {
   payEmi(id:any){
     return this.http.post('https://furniture-v1-app.herokuapp.com/api/emi/emiupdate/'+id,{});
   }
+
+  viewEmisHistory(){
+    return this.http.get('https://furniture-v1-app.herokuapp.com/api/emi/adminhistoryemi');
+  }
 }

@@ -7,6 +7,7 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
 import { EmiHishtoryComponent } from './emi-hishtory/emi-hishtory.component';
 import { EmiComponent } from './emi/emi.component';
 import { HomeComponent } from './home/home.component';
+import { OrderHishtoryComponent } from './order-hishtory/order-hishtory.component';
 import { OrderComponent } from './order/order.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductListComponent } from './product-list/product-list.component';
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path:'Customer-list',component:CustomerListComponent,canActivate:[AuthadminGuard]},
   {path:'Emi',component:EmiComponent,canActivate:[AuthadminGuard]},
   {path:'emi-hishtory',component:EmiHishtoryComponent,canActivate:[AuthadminGuard]},
+  {path:'order-history',component:OrderHishtoryComponent,canActivate:[AuthadminGuard]},
   {path:'logout',component:HomeComponent},
   {path:'**',component:PageNotFoundComponent},
  

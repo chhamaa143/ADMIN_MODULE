@@ -21,6 +21,10 @@ export class CategoryService {
     return this.http.get('https://furniture-v1-app.herokuapp.com/api/category/delete/'+id);
   }
 
-
+  addCategory(formData:FormData) {
+    //return this.http.post('https://furniture-v1-app.herokuapp.com/api/category/add',{formData});
+    console.log(formData);
+    return this.http.post('http://localhost:3000/api/category/add',formData);
+  }
 
 }

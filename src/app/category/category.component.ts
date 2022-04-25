@@ -14,10 +14,20 @@ export class CategoryComponent implements OnInit {
   }
 
 
+  categoryName!: string
   image!:string;
   selectImage(event:any){
     const file = event.target.files[0];
     this.image = file;
+  }
+
+  addCategory(){
+    const formData=new FormData();
+    formData.append("image",this.image);
+    formData.append("name",this.categoryName)
+    this.categoryService.addCategory(formData).subscribe(data => {
+      window.alert("Category Added....");
+    });
   }
 
 

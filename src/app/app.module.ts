@@ -20,6 +20,7 @@ import { OrderHishtoryComponent } from './order-hishtory/order-hishtory.componen
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { OrderHistoryComponent } from './order-history/order-history.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { FormsModule } from '@angular/forms';
     CustomerListComponent,
     EmiComponent,
     EmiHishtoryComponent,
-    OrderHishtoryComponent
+    OrderHishtoryComponent,
+    OrderHistoryComponent
   ],
   imports: [
     BrowserModule,
